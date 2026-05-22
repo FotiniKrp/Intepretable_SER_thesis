@@ -17,14 +17,14 @@ Traditional feature selection can lead to overfitting on a single dataset. This 
 
 - **Outer LOSO loop**: Ensures speaker-independent generalization (speaker as test group)
 - **Inner LOSO loop**: Performs feature selection within training data only
-- This process repeats for all speakers and the most frequent features across all folds are retained.
-- From more complex datasets such as GTSinger we also evaluate the mean_importance of these features as well as the frequency.
+- This process is repeated for all speakers and the most frequent features across all folds are retained.
+- From more complex datasets such as GTSinger the mean_importance of these features is examined along the frequency.
 - **Cross-domain validation**: Optimal feature sets are tested across all available singing datasets (RAVDESS, VocalSet, GTSinger)
 - **Result**: Robust, generalizable feature sets that work across different singers and domains
 
 ## Repository Contents
 
-### Core Notebooks
+### Notebooks
 
 #### 1. `Feature_Extraction.ipynb`
 Comprehensive feature extraction pipeline for singing audio:
@@ -34,7 +34,7 @@ Comprehensive feature extraction pipeline for singing audio:
 - **Spectral Features**: Spectral centroids, spectral flatness, HNR, Alpha ratio etc.
 - **Loudness & Energy**: RMS energy, energy dynamics, loudness variations
 - **Singing Features**: Vibrato patterns, Glissando detection, Vocal Register Detection etc.
-- **Phonetic Features**: CMU Dictionary-based phoneme analysis, articulation rates and phoneme ratios.
+- **Phonetic Features**: CMU Dictionary-based phoneme analysis, articulation rates, phoneme and pause ratios.
 
 **Pitch-Specific Features:**
 - Modulation Frequency Domain Ratios (MFDR) - captures vibrato and micro-modulations in different frequency bands (0.5-3Hz, 4-8Hz, 8-20Hz)
@@ -71,7 +71,7 @@ Comprehensive analysis, evaluation, and interpretation of results:
 
 - **`model_pitch_leaky (1).h5`** - Pre-trained CNN model
   - Architecture: Neural network with LeakyReLU activations
-  - Purpose: Extraction of mid-level features (vocal techniques, expressivity patterns)
+  - Purpose: Extraction of mid-level features (vocal techniques - expressivity patterns)
   - Input: Mel-spectrograms and pitch contours
   - Output: High-level feature representations
 
