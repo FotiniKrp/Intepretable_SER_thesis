@@ -31,14 +31,16 @@ Comprehensive feature extraction pipeline for singing audio:
 
 **Acoustic Features Extracted:**
 - **Pitch Analysis**: F0 contours, pitch statistics, variability
-- **Spectral Features**: Spectral centroids, spectral flatness..
+- **Spectral Features**: Spectral centroids, spectral flatness, HNR, Alpha ratio and more.
 - **Loudness & Energy**: RMS energy, energy dynamics, loudness variations
-- **Singing Features**: Vibrato patterns
-- **Phonetic Features**: CMU Dictionary-based phoneme analysis, articulation rates
+- **Singing Features**: Vibrato patterns, Glissando detection, Register Detection and more.
+- **Phonetic Features**: CMU Dictionary-based phoneme analysis, articulation rates and phoneme ratios.
 
 **Pitch-Specific Features:**
 - Modulation Frequency Domain Ratios (MFDR) - captures vibrato and micro-modulations in different frequency bands (0.5-3Hz, 4-8Hz, 8-20Hz)
-- Delta pitch statistics and more
+- Delta pitch statistics
+- Melodic deviation
+- Proxy for DETT using nearest semitone rounding. (when there is no target tone)
 
 **Tools & Libraries:**
 - CREPE for pitch tracking
