@@ -31,21 +31,22 @@ Comprehensive feature extraction pipeline for singing audio:
 
 **Acoustic Features Extracted:**
 - **Pitch Analysis**: F0 contours, pitch statistics, variability
-- **Spectral Features**: Spectral centroids, spectral flatness, HNR, Alpha ratio and more.
+- **Spectral Features**: Spectral centroids, spectral flatness, HNR, Alpha ratio etc.
 - **Loudness & Energy**: RMS energy, energy dynamics, loudness variations
-- **Singing Features**: Vibrato patterns, Glissando detection, Register Detection and more.
+- **Singing Features**: Vibrato patterns, Glissando detection, Vocal Register Detection etc.
 - **Phonetic Features**: CMU Dictionary-based phoneme analysis, articulation rates and phoneme ratios.
 
 **Pitch-Specific Features:**
 - Modulation Frequency Domain Ratios (MFDR) - captures vibrato and micro-modulations in different frequency bands (0.5-3Hz, 4-8Hz, 8-20Hz)
 - Delta pitch statistics
-- Melodic deviation
-- Proxy for DETT using nearest semitone rounding. (when there is no target tone)
+- Proxy for DETT (Deviation from target tone) using nearest semitone value.
 
 **Tools & Libraries:**
 - CREPE for pitch tracking
 - OpenSMILE v2.6 (eGeMAPSv02) for acoustic feature extraction
-- Librosa for audio processing
+- Librosa for audio processing and extracting low-level pitch features.
+- TensorFlow/Keras (for the h5 model)
+- scikit-learn, SHAP, etc. 
 
 #### 2. `Results_and_Visuals.ipynb`
 Comprehensive analysis, evaluation, and interpretation of results:
@@ -54,6 +55,7 @@ Comprehensive analysis, evaluation, and interpretation of results:
 - Leave-One-Speaker-Out (LOSO) evaluation methodology
 - Feature group definitions (prosodic, spectral, phonemic, techniques)
 - Model training and cross-validation
+- Feature Selection pipeline
 - SHAP explainability analysis to understand feature importance
 - Confusion matrices and classification reports
 - Visualization of emotion distributions and feature patterns
