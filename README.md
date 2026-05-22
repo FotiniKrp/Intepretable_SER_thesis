@@ -42,9 +42,9 @@ Comprehensive feature extraction pipeline for singing audio:
 - Proxy for DETT (Deviation from target tone) using nearest semitone value.
 
 **Tools & Libraries:**
-- CREPE for pitch tracking
+- CREPE for accurate pitch tracking
 - OpenSMILE v2.6 (eGeMAPSv02) for acoustic feature extraction
-- Librosa for audio processing and extracting low-level pitch features.
+- Librosa for audio processing and extracting extra low-level features.
 - TensorFlow/Keras (for the h5 model)
 - scikit-learn, SHAP, etc. 
 
