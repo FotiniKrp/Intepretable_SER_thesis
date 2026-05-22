@@ -19,7 +19,7 @@ Traditional feature selection can lead to overfitting on a single dataset. This 
 - **Inner LOSO loop**: Performs feature selection within training data only
 - This process repeats for all speakers and the most frequent features across all folds are retained.
 - From more complex datasets such as GTSinger we also evaluate the mean_importance of these features as well as the frequency.
-- **Cross-domain validation**: Optimal feature sets are tested across all available singing datasets
+- **Cross-domain validation**: Optimal feature sets are tested across all available singing datasets (RAVDESS, VocalSet, GTSinger)
 - **Result**: Robust, generalizable feature sets that work across different singers and domains
 
 ## Repository Contents
