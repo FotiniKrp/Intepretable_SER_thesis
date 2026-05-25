@@ -71,7 +71,7 @@ Comprehensive analysis, evaluation, and interpretation of results:
 
 - **`model_pitch_leaky (1).h5`** - Pre-trained CNN model
   - Architecture: Neural network with LeakyReLU activations
-  - Purpose: Extraction of mid-level features (vocal techniques - expressivity patterns)
+  - Purpose: Output presence of vocal techniques - expressivity patterns
   - Input: Mel-spectrograms and pitch contours
   - Output: High-level feature representations
 
