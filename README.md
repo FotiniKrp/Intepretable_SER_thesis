@@ -77,7 +77,7 @@ Comprehensive analysis, evaluation, and interpretation of results:
 
 - **`cmudict.dict`** - CMU Pronouncing Dictionary
   - Contains phonetic transcriptions for 130K+ English words
-  - Used for phoneme-based feature engineering
+  - Used for phoneme-alignment
   - Enables syllable and phonetic analysis
 
 - **`run_mfa.bash`** - Montreal Forced Aligner (MFA) automation script
