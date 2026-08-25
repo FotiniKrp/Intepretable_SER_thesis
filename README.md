@@ -1,15 +1,15 @@
-# Interpretable Singing Emotion Recognition (SER) - Cross-Domain Study
+# Interpretable Singing Emotion Recognition 
 
 ## Overview
 
-This repository contains the research and implementation code for a **cross-domain singing emotion recognition (SER) study** with a focus on **interpretability and explainability**. The project combines deep learning for mid-level feature extraction, handcrafted acoustic descriptors (eGeMAPS etc.) with interpretable machine learning classifiers to understand what acoustic and performative characteristics distinguish different emotions in singing.
+This repository contains the research and implementation code for a **singing emotion recognition (SER) study** with a focus on **interpretability and explainability**. The project combines deep learning for mid-level feature extraction, handcrafted acoustic descriptors (eGeMAPS etc.) with interpretable machine learning classifiers to understand what acoustic and performative characteristics distinguish different emotions in singing.
 
 ## Project Goals
 
 1. **Extract interpretable mid-level features** from singing audio using CNNs (vocal techniques, expressive patterns)
 2. **Develop robust feature selection** through nested Leave-One-Speaker-Out (LOSO) cross-validation
 3. **Identify emotion-specific characteristics** using interpretable classifiers (Random Forest + SHAP)
-4. **Enable cross-domain generalization** by testing optimized feature sets across multiple singing datasets
+4. **Test generalization** by testing optimized feature sets across multiple singing datasets
 
 ## Key Innovation: Nested LOSO Feature Selection
 
@@ -19,7 +19,7 @@ Traditional feature selection can lead to overfitting on a single dataset. This 
 - **Inner LOSO loop**: Performs feature selection within training data only
 - This process is repeated for all speakers and the most frequent features across all folds are retained.
 - From more complex datasets such as GTSinger the mean_importance of these features is examined along the frequency.
-- **Cross-domain validation**: Optimal feature sets are tested across all available singing datasets (RAVDESS, VocalSet, GTSinger)
+- **Cross-corpus validation**: Optimal feature sets are tested across all available singing datasets 
 - **Result**: Robust, generalizable feature sets that work across different singers and domains
 
 ## Repository Contents
@@ -59,26 +59,23 @@ Comprehensive analysis, evaluation, and interpretation of results:
 - SHAP explainability analysis to understand feature importance
 - Confusion matrices and classification reports
 - Visualization of emotion distributions and feature patterns
-- Cross-domain generalization results
+- Cross-corpus generalization results
 
 **Key Analysis:**
-- Per-speaker accuracy tracking
-- Balanced accuracy metrics
-- Feature importance rankings via SHAP values
+- Per-speaker metrics
+- Feature rankings via SHAP 
 - Emotion-feature relationship visualization
 
 ### Data & Models
 
 - **`model_pitch_leaky (1).h5`** - Pre-trained CNN model
-  - Architecture: Neural network with LeakyReLU activations
+  - Architecture: Dual-input architecture with late fusion
   - Purpose: Output presence of vocal techniques - expressivity patterns
   - Input: Mel-spectrograms and pitch contours
-  - Output: High-level feature representations
 
 - **`cmudict.dict`** - CMU Pronouncing Dictionary
   - Contains phonetic transcriptions for 130K+ English words
   - Used for phoneme-alignment
-  - Enables syllable and phonetic analysis
 
 - **`run_mfa.bash`** - Montreal Forced Aligner (MFA) automation script
   - Performs automatic audio-to-phoneme alignment
