@@ -75,3 +75,11 @@ To reproduce the feature extraction and experiments, download the datasets direc
 - scikit-learn, SHAP, etc.
 
 ### **Summary of key findings & Figures**
+
+### 1. Selected Feature Descriptors (Nested LOSO Selection)
+| Category | Speech-Optimized (RAVDESS, 19 feats) | Singing-Optimized (RAVDESS, 18 feats) | Singing-Optimized (GTSinger, 19 feats) |
+| :--- | :--- | :--- | :--- |
+| **Prosodic** *(5–8)* | $f_0$ mean/std, pitch range, $f_0$ slope, jitter, local shimmer | $f_0$ mean/std, $\Delta f_0$, local shimmer, MFDR (vibrato/micro-mod.) | $f_0$ mean/std, pitch range, loudness peaks/sec |
+| **Spectral** *(5–9)* | Alpha ratio, Hammarberg index, spectral flux, $F_1\text{--}F_3$ formants | Alpha ratio (std), spectral flux, $F_1\text{--}F_2$ dynamics | Alpha ratio (std), spectral slope, zero-crossing rate |
+| **Phonetic** *(2)* | Articulation rate, mean phoneme duration | Articulation rate, phoneme duration SD | Articulation rate, phoneme duration SD |
+| **Vocal Technique** *(0–6)* | *None (Excluded by definition)* | Vibrato, Pharyngeal, Breathy probabilities | Vibrato, Pharyngeal, Breathy, Falsetto probabilities |
