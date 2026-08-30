@@ -5,6 +5,7 @@
 We propose an interpretable Singing Emotion Recognition (SER) framework combining domain-specific descriptors spanning prosodic, spectral, phonetic, and learned vocal technique features. Using a nested Leave-One-Speaker-Out (LOSO) feature selection strategy paired with SHAP and Grad-CAM analyses, we demonstrate that incorporating explicit singing descriptors (such as vibrato) improves cross-speaker stability and provides acoustically coherent explanations for emotional expression in singing performances.
 
 ## Repository Contents
+```
 ├── notebooks/
 │   ├── Feature_Extraction.ipynb     # Pipeline for preprocessing and feature extraction
 │   └── Results_and_Visuals.ipynb    # Nested LOSO feature selection, SHAP and Grad-CAM explainability, and performance evaluation
@@ -16,6 +17,7 @@ We propose an interpretable Singing Emotion Recognition (SER) framework combinin
 │   └── diagram3.png                 # Framework architecture overview
 ├── requirements.txt                 # Dependencies (Librosa, openSMILE, CREPE, SHAP, etc.)
 └── README.md
+```
 
 ### Notebooks
 
