@@ -15,7 +15,6 @@ We propose an interpretable Singing Emotion Recognition (SER) framework combinin
 ├── supplementary/
 │   ├── cmudict.dict                 # CMU Pronouncing Dictionary for phonetic processing
 │   └── proposed_framework.png       # Framework architecture overview
-├── requirements.txt                 # Dependencies
 └── README.md
 ```
 
