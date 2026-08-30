@@ -27,7 +27,7 @@ Comprehensive feature extraction pipeline for singing audio:
 - **Pitch Analysis**: F0 contours, pitch statistics, variability
 - **Spectral Features**: Spectral centroid, spectral flatness, HNR, Formant frequencies, Alpha ratio etc.
 - **Loudness & Energy**: energy dynamics, loudness variations, loudness peaks/sec
-- **Singing Features**: Vocal Technique Detection, Vocal Register Detection
+- **Singing Features**: vocal technique detection
 - **Phonetic Features**: CMU Dictionary-based phoneme analysis, articulation rates, phoneme and pause ratios.
 
 #### 2. `Results_and_Visuals.ipynb`
@@ -60,8 +60,8 @@ To reproduce the feature extraction and experiments, download the datasets direc
 
 - **`model_pitch_leaky (1).h5`** - Pre-trained CNN model
   - Architecture: Dual-input architecture with late fusion
-  - Purpose: Output presence of vocal techniques 
-  - Input: Mel-spectrograms and pitch contours
+  - Purpose: Output presence of vocal techniques (*vibrato, glissando, mix, pharyngeal, falsetto, breathy*)
+  - Input: Mel-spectrograms and pitch contours from **~1.5-second audio segments**
 
 - **`cmudict.dict`** - CMU Pronouncing Dictionary
   - Contains phonetic transcriptions for 130K+ English words
