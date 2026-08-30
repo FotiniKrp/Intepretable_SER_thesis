@@ -14,7 +14,7 @@ We propose an interpretable Singing Emotion Recognition (SER) framework combinin
 │   └── model_pitch_leaky (1).h5     # Pre-trained Dual-Input CNN for vocal technique extraction
 ├── supplementary/
 │   ├── cmudict.dict                 # CMU Pronouncing Dictionary for phonetic processing
-│   └── proposed_pipeline.png        # Framework architecture overview
+│   └── proposed_framework.png       # Framework architecture overview
 ├── requirements.txt                 # Dependencies
 └── README.md
 ```
