@@ -19,7 +19,7 @@ We propose an interpretable Singing Emotion Recognition (SER) framework combinin
 └── README.md
 ```
 
-### Notebooks
+### Notebooks & Scripts
 
 #### 1. `Feature_Extraction.ipynb`
 Comprehensive feature extraction pipeline for singing audio:
