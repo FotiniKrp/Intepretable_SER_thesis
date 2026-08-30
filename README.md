@@ -2,27 +2,20 @@
 
 ## Overview
 
-This repository contains the research and implementation code for a **singing emotion recognition (SER) study** with a focus on **interpretability and explainability**. The project combines deep learning for mid-level feature extraction, handcrafted acoustic descriptors (eGeMAPS etc.) with interpretable machine learning classifiers to understand what acoustic and performative characteristics distinguish different emotions in singing.
-
-## Project Goals
-
-1. **Extract interpretable mid-level features** from singing audio using CNNs (vocal techniques, expressive patterns)
-2. **Develop robust feature selection** through nested Leave-One-Speaker-Out (LOSO) cross-validation
-3. **Identify emotion-specific characteristics** using interpretable classifiers (Random Forest + SHAP)
-4. **Test generalization** by testing optimized feature sets across multiple singing datasets
-
-## Key Innovation: Nested LOSO Feature Selection
-
-Traditional feature selection can lead to overfitting on a single dataset. This project proposes a **nested Leave-One-Speaker-Out (LOSO)** approach:
-
-- **Outer LOSO loop**: Ensures speaker-independent generalization (speaker as test group)
-- **Inner LOSO loop**: Performs feature selection within training data only
-- This process is repeated for all speakers and the most frequent features across all folds are retained.
-- From more complex datasets such as GTSinger the mean_importance of these features is examined along the frequency.
-- **Cross-corpus validation**: Optimal feature sets are tested across all available singing datasets 
-- **Result**: Robust, generalizable feature sets that work across different singers and domains
+We propose an interpretable Singing Emotion Recognition (SER) framework combining domain-specific descriptors spanning prosodic, spectral, phonetic, and learned vocal technique features. Using a nested Leave-One-Speaker-Out (LOSO) feature selection strategy paired with SHAP and Grad-CAM analyses, we demonstrate that incorporating explicit singing descriptors (such as vibrato) improves cross-speaker stability and provides acoustically coherent explanations for emotional expression in singing performances.
 
 ## Repository Contents
+├── notebooks/
+│   ├── Feature_Extraction.ipynb     # Pipeline for preprocessing and feature extraction
+│   └── Results_and_Visuals.ipynb    # Nested LOSO feature selection, SHAP and Grad-CAM explainability, and performance evaluation
+├── models/
+│   └── model_pitch_leaky (1).h5     # Pre-trained Dual-Input CNN for vocal technique extraction
+├── assets/
+│   ├── cmudict.dict                 # CMU Pronouncing Dictionary for phonetic processing
+│   ├── run_mfa.bash                 # Automated script for Montreal Forced Aligner (MFA)
+│   └── diagram3.png                 # Framework architecture overview
+├── requirements.txt                 # Dependencies (Librosa, openSMILE, CREPE, SHAP, etc.)
+└── README.md
 
 ### Notebooks
 
@@ -31,22 +24,10 @@ Comprehensive feature extraction pipeline for singing audio:
 
 **Acoustic Features Extracted:**
 - **Pitch Analysis**: F0 contours, pitch statistics, variability
-- **Spectral Features**: Spectral centroids, spectral flatness, HNR, Alpha ratio etc.
-- **Loudness & Energy**: RMS energy, energy dynamics, loudness variations
-- **Singing Features**: Vibrato patterns, Glissando detection, Vocal Register Detection etc.
+- **Spectral Features**: Spectral centroid, spectral flatness, HNR, Formant frequencies, Alpha ratio etc.
+- **Loudness & Energy**: energy dynamics, loudness variations, loudness peaks/sec
+- **Singing Features**: Vocal Technique Detection, Vocal Register Detection
 - **Phonetic Features**: CMU Dictionary-based phoneme analysis, articulation rates, phoneme and pause ratios.
-
-**Pitch-Specific Features:**
-- Modulation Frequency Domain Ratios (MFDR) - captures vibrato and micro-modulations in different frequency bands (0.5-3Hz, 4-8Hz, 8-20Hz)
-- Delta pitch statistics
-- Proxy for DETT (Deviation from target tone) using nearest semitone value.
-
-**Tools & Libraries:**
-- CREPE for accurate pitch tracking
-- OpenSMILE v2.6 (eGeMAPSv02) for acoustic feature extraction
-- Librosa for audio processing and extracting extra low-level features.
-- TensorFlow/Keras (for the h5 model)
-- scikit-learn, SHAP, etc. 
 
 #### 2. `Results_and_Visuals.ipynb`
 Comprehensive analysis, evaluation, and interpretation of results:
@@ -55,29 +36,34 @@ Comprehensive analysis, evaluation, and interpretation of results:
 - Leave-One-Speaker-Out (LOSO) evaluation methodology
 - Feature group definitions (prosodic, spectral, phonemic, techniques)
 - Model training and cross-validation
-- Feature Selection pipeline
+- Feature Selection pipeline (Nested LOSO)
 - SHAP explainability analysis to understand feature importance
 - Confusion matrices and classification reports
 - Visualization of emotion distributions and feature patterns
-- Cross-corpus generalization results
+- Cross-corpus performance comparison
+- Grad-cam analysis to validate learned vocal technique features
 
-**Key Analysis:**
-- Per-speaker metrics
-- Feature rankings via SHAP 
-- Emotion-feature relationship visualization
+#### 3. `run_mfa.bash`
+- Montreal Forced Aligner (MFA) automation script
+- Provides phonetic timing information
+- Enables detailed phonetic feature extraction
 
-### Data & Models
+### Access to Data & Models
 
 - **`model_pitch_leaky (1).h5`** - Pre-trained CNN model
   - Architecture: Dual-input architecture with late fusion
-  - Purpose: Output presence of vocal techniques - expressivity patterns
+  - Purpose: Output presence of vocal techniques 
   - Input: Mel-spectrograms and pitch contours
 
 - **`cmudict.dict`** - CMU Pronouncing Dictionary
   - Contains phonetic transcriptions for 130K+ English words
   - Used for phoneme-alignment
+ 
+### **Tools & Libraries:**
+- CREPE for accurate pitch tracking
+- OpenSMILE v2.6 (eGeMAPSv02) for acoustic feature extraction
+- Librosa for audio processing and extracting features.
+- TensorFlow (for the CNN)
+- scikit-learn, SHAP, etc.
 
-- **`run_mfa.bash`** - Montreal Forced Aligner (MFA) automation script
-  - Performs automatic audio-to-phoneme alignment
-  - Provides precise phonetic timing information
-  - Enables detailed phonetic feature extraction
+### **Summary of key findings & Figures**
