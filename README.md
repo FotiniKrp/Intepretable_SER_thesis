@@ -9,8 +9,8 @@ We propose an interpretable Singing Emotion Recognition (SER) framework combinin
 ├── notebooks/
 │   ├── Feature_Extraction.ipynb     # Pipeline for preprocessing and feature extraction
 │   └── Results_and_Visuals.ipynb    # Nested LOSO feature selection, SHAP and Grad-CAM explainability, and performance evaluation
-├── models/
-    ├── run_mfa.bash                 # Automated script for Montreal Forced Aligner (MFA)
+├── models_&_scripts/
+│   ├── run_mfa.bash                 # Automated script for Montreal Forced Aligner (MFA)
 │   └── model_pitch_leaky (1).h5     # Pre-trained Dual-Input CNN for vocal technique extraction
 ├── supplementary/
 │   ├── cmudict.dict                 # CMU Pronouncing Dictionary for phonetic processing
