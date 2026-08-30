@@ -52,6 +52,12 @@ Comprehensive analysis, evaluation, and interpretation of results:
 
 ### Access to Data & Models
 
+To reproduce the feature extraction and experiments, download the datasets directly from their official sources:
+
+- **RAVDESS (Singing Subset):** Download from [Zenodo (RAVDESS)]().
+- **GTSinger:** Access via
+- **VocalSet:**: Download from []()
+
 - **`model_pitch_leaky (1).h5`** - Pre-trained CNN model
   - Architecture: Dual-input architecture with late fusion
   - Purpose: Output presence of vocal techniques 
