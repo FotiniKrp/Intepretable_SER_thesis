@@ -27,7 +27,7 @@ Comprehensive feature extraction pipeline for singing audio:
 - **Pitch Analysis**: F0 contours, pitch statistics, variability
 - **Spectral Features**: Spectral centroid, spectral flatness, HNR, Formant frequencies, Alpha ratio etc.
 - **Loudness & Energy**: energy dynamics, loudness variations, loudness peaks/sec
-- **Singing Features**: vocal technique detection
+- **Vocal Technique Features:**: vocal technique presence
 - **Phonetic Features**: CMU Dictionary-based phoneme analysis, articulation rates, phoneme and pause ratios.
 
 #### 2. `Results_and_Visuals.ipynb`
