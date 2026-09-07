@@ -89,7 +89,7 @@ To reproduce the feature extraction and experiments, download the datasets direc
 ### 3. VocalSet mappings
 ### 4. GTSinger SHAP analysis
 
-## Acknowledggments & References
+## Acknowledgments & References
 
 - **CMU Pronouncing Dictionary**: Used for phoneme-level alignment preprocessing.  
   *Carnegie Mellon University Speech Group.* Available at: [http://www.speech.cs.cmu.edu/cgi-bin/cmudict](http://www.speech.cs.cmu.edu/cgi-bin/cmudict)
